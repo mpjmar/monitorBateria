@@ -21,6 +21,7 @@ public class App {
         while (true) {
             int carga = (int)(Math.random() * 101);
             String color = (carga < 20) ? ROJO : (carga >= 20 && carga < 80) ? AMARILLO : VERDE;
+            String colorMax = (cargaMax < 20) ? ROJO : (cargaMax >= 20 && cargaMax < 80) ? AMARILLO : VERDE;
 
             System.out.printf("""
                 ╔══════════════════════════════════════════════════════╗
@@ -32,7 +33,7 @@ public class App {
                     """,
                     String.format("%" + Math.ceil(((double)54 - longTitulo) / 2) + "s%s%" + Math.floor(((double)54 - longTitulo)/ 2) + "s", "", titulo, ""),
                     color, carga, RESET, "║",
-                    color, cargaMax, RESET, "║"
+                    colorMax, cargaMax, RESET, "║"
                     );
             System.out.print("║ [");
             pintaCarga(carga, color);
