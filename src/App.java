@@ -7,10 +7,8 @@ public class App {
     public static final String CLEAN_SCREEN = "\033[H\033[2J";
 
     public static void pintaCarga (int carga, String color) {
-        for (int i = 0; i < carga / 2; i++)
-            System.out.print(color + "█");
-        for (int i = carga / 2; i < 50; i++)
-            System.out.print(color + "░");
+        for (int i = 0; i < 50; i++)
+            System.out.print(i < carga / 2 ? (color + "█" + RESET) : "░");
     }
     public static void main(String[] args) throws Exception {
         
